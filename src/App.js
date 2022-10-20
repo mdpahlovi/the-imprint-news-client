@@ -1,5 +1,11 @@
+import Login from "./components/login";
+
 function App() {
-    return <div>Pahlovi</div>;
+    return (
+        <>
+            <Login />
+        </>
+    );
 }
 
 export default App;

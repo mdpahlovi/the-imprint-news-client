@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .input-field {
+        @apply input focus:outline-none border bg-transparent;
+    }
+    .input-label {
+        @apply absolute top-3 left-4 -z-10 transform duration-300;
+    }
+    .label-top {
+        @apply scale-75 -translate-y-6 z-0 bg-base-100 ml-2 px-2;
+    }
+}
+
+.input-field:focus ~ .input-label {
+    @apply label-top;
+}
