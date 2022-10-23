@@ -3,14 +3,30 @@
 @tailwind utilities;
 
 @layer components {
+    .my-container {
+        @apply container mx-auto px-6;
+    }
+    .form-container {
+        @apply max-w-md mx-auto px-6;
+    }
+    .content-gap-x {
+        @apply flex gap-5;
+    }
+    .content-gap-y {
+        @apply flex flex-col gap-5;
+    }
+    .line-x {
+        @apply flex items-center before:flex-1 before:border before:border-base-content  after:flex-1 after:border after:border-base-content;
+    }
+    /* Input Field */
     .input-field {
-        @apply input focus:outline-none border bg-transparent;
+        @apply w-full input focus:outline-none focus:border-primary border-base-content bg-transparent;
     }
     .input-label {
         @apply absolute top-3 left-4 -z-10 transform duration-300;
     }
     .label-top {
-        @apply scale-75 -translate-y-6 z-0 bg-base-100 ml-2 px-2;
+        @apply scale-75 -translate-y-6 z-0 bg-base-100 text-primary ml-2 px-2;
     }
 }
 
