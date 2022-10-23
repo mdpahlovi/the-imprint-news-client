@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/UserContext";
 import Input from "./Reusable/Input";
 
 const Signup = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
     return (
         <section className="form-container content-gap-y h-screen justify-center">
             <form className="content-gap-y">
