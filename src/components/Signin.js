@@ -2,10 +2,11 @@ import React from "react";
 import Input from "./Reusable/Input";
 import { ImGoogle, ImGithub } from "react-icons/im";
 import { BsFacebook } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Signin = () => {
     return (
-        <section className="form-container content-gap-y">
+        <section className="form-container content-gap-y h-screen justify-center">
             <form className="content-gap-y">
                 <Input type={"email"} name={"email"} text={"Email"} />
                 <Input type={"password"} name={"password"} text={"Password"} />
@@ -39,9 +40,9 @@ const Signin = () => {
             </div>
             <p className="text-center">
                 Don't have an account?
-                <a href="/" className="ml-1.5 font-bold uppercase underline">
+                <Link to="/signup" className="ml-1.5 font-bold uppercase underline">
                     Sign Up Now
-                </a>
+                </Link>
             </p>
         </section>
     );

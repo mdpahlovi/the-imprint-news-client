@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Input from "./Reusable/Input";
 
 const Signup = () => {
     return (
-        <section className="form-container content-gap-y">
+        <section className="form-container content-gap-y h-screen justify-center">
             <form className="content-gap-y">
                 <div className="content-gap-x justify-between">
                     <Input type={"text"} name={"fastName"} text={"Fast Name"} />
@@ -24,9 +25,9 @@ const Signup = () => {
             </form>
             <p className="text-center">
                 If you already a user?
-                <a href="/" className="ml-1.5 font-bold uppercase underline">
+                <Link to="/signin" className="ml-1.5 font-bold uppercase underline">
                     Sign In Now
-                </a>
+                </Link>
             </p>
         </section>
     );
