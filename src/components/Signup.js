@@ -4,11 +4,24 @@ import { AuthContext } from "../context/UserContext";
 import Input from "./Reusable/Input";
 
 const Signup = () => {
-    const { user } = useContext(AuthContext);
-    console.log(user);
+    const { createUser } = useContext(AuthContext);
+
+    const handelSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => console.log(error));
+    };
+
     return (
         <section className="form-container content-gap-y h-screen justify-center">
-            <form className="content-gap-y">
+            <form onSubmit={handelSubmit} className="content-gap-y">
                 <div className="content-gap-x justify-between">
                     <Input type={"text"} name={"fastName"} text={"Fast Name"} />
                     <Input type={"text"} name={"lastName"} text={"Last Name"} />
